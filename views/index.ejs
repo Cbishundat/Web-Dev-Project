@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Majestic Felines</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/styles/main.css">
+</head>
+
+<body>
+    
+<h1>Majestic Felines</h1>
+<p>Are you in need of some Cat Therapy? It’s kitten all over your face! Sort and vote on your favorite images below for all your feline needs!</p>
+   
+
+<!--The <form> element is a container for different types of input elements, such as: text fields, checkboxes, radio buttons, submit buttons, etc. It's used to send data to a server-->
+<form action="/" method="get">
+    <select name="breed_id">
+        <option value="">All Cats</option>
+        <% breeds.forEach(function(breed) { %>
+            <option value="<%= breed.id %>" <%= breed.id === selectedBreed ? 'selected' : '' %>><%= breed.name %></option>
+        <% }); %>
+    </select>
+    <button type="submit">Filter by Breed</button>
+</form>
+
+<h3>Pet me!</h3>
+
+<!-- Audio element for playing meow sound -->
+<audio id="meowSound" src="../sounds/meow.mp3"></audio>
+
+<div class="cat-silhouette left"></div>
+<div class="cat-silhouette right"></div>
+
+<!-- Cat images -->
+<img src="<%= catImageUrl %>" alt="A majestic cat" class="cat-image" id="catImage"> 
+
+<h2>Do you like this cat?</h2>
+
+
+<!-- Form for liking or disliking the current cat -->
+<form action="/like-cat" method="post" style="margin-bottom: 20px;">
+    <input type="hidden" name="catUrl" value="<%= catImageUrl %>">
+    <input type="hidden" name="breed_id" value="<%= selectedBreed %>"> <!-- Pass breed_id as hidden input -->
+    <button type="submit" name="like" value="yes">✔️ Yes</button>
+    <button type="submit" name="like" value="no">❌ No</button>
+</form>
+
+ <!-- Form for showing favorite cats -->
+<form action="/favorites" method="get">
+    <button type="submit">Show me my favorites</button>
+</form>
+
+ <!-- Form for showing favorite cats -->
+<form action="/reset-likes" method="post">
+    <button type="submit">Reset my favorites</button>
+</form>
+
+ <!-- Script for playing meow sound when cat image is clicked -->
+<script>
+    document.getElementById('catImage').addEventListener('click', function() {
+        var sound = document.getElementById('meowSound');
+        sound.play();
+    });
+</script>
+    
+</body>
+</html>

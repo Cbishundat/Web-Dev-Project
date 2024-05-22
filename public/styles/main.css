@@ -1,0 +1,146 @@
+body {
+    background-image: url('../images/grasssky.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    text-align: center;
+}
+
+h1{
+    font-family: 'Great Vibes', cursive; 
+    font-size: 100px;
+    color: white;
+    margin-bottom: 10px;
+    margin-top:10px;
+    text-shadow: 3px 3px 4px rgba(0,0,0,0.5); 
+}
+p{
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); 
+    border-radius: 8px; 
+    width: fit-content;
+    margin: auto;
+    text-align: center;
+    font-family: 'Comic Neue', cursive;
+    font-size: 25px;
+    color: white; 
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); 
+}
+
+h3{
+    margin: 5px auto;
+    color: white;
+    font-family: 'Comic Neue', cursive; 
+    font-size: 15px;
+}
+
+.cat-image {
+    max-width: 800px;  
+    max-height: 800px; 
+    width: auto;       
+    height: auto;      
+    object-fit: contain;
+    display: block;
+    margin: 20px auto; 
+    animation: glow 1.5s infinite alternate; /* Applies glowing animation */
+    cursor: grab; 
+    
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 10px blue;
+    }
+    to {
+        box-shadow: 0 0 40px blue, 0 0 60px blue; 
+    }
+}
+
+h2{
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5); 
+    border-radius: 10px; 
+    width: fit-content;
+    color:white;
+    font-family: 'Comic Neue', cursive;
+    font-size: 30px;
+    margin: 10px auto;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+button {
+    margin: 20px;
+    padding: 10px 20px; 
+    font-size: 20px; 
+    font-family: 'Comic Neue', cursive;
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    outline: none; 
+    background-color: black;
+    transition: background-color 0.3s; 
+    font-weight: bold;
+}
+
+button[name="like"][value="yes"] {
+    background-color: green; 
+
+}
+
+button[name="like"][value="no"] {
+    background-color: orange; 
+}
+
+button:hover {
+    opacity: 0.8; 
+}
+
+select {
+    padding: 10px 20px; 
+    font-size: 18px; 
+    font-family: 'Comic Neue', cursive; 
+    font-weight: bold;
+    background-color: white; 
+    color: gray; 
+    border: 2px solid #ccc; 
+    border-radius: 5px; 
+    appearance: none; 
+    cursor: pointer; /
+}
+
+select {
+    background-image: url('../images/arrow.png'); 
+    background-repeat: no-repeat;
+    background-position: right 10px center; 
+    background-size: 12px; 
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0) scaleX(var(--scaleX, 1)); }
+    50% { transform: translateY(-20px) scaleX(var(--scaleX, 1)); }
+}
+
+.cat-silhouette {
+    position: fixed;
+    top: 40%;
+    width: 250px;
+    height: 250px;
+    background: no-repeat center / cover; 
+    animation: bounce 2s infinite;
+    --scaleX: 1; 
+}
+
+.cat-silhouette.left {
+    left: 11%;
+    background-image: url('../images/cat.png');
+}
+
+.cat-silhouette.right {
+    right: 11%;
+    background-image: url('../images/cat.png');
+    --scaleX: -1; /* flips image */
+}
