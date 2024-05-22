@@ -7,7 +7,7 @@
 
  ## API Choice
 
-The Cat API is an open, free, read & write API all about Cats
+The Cat API is an open, free, read & write API all about Cats.
 The Cat API gives you access to thousands of cat images, and it allows you to:
 
 * Upload your own images
