@@ -34,7 +34,10 @@ IMPORTANT: Due to being on the basic plan of the API, some features will be rest
 
 1. Clone this repo
 2. Navigate to its directory 
-3. Install dependendies
-4. Start server using command `node index.js`
-5. Access the website in your browser at `http://localhost:3000`
+3. Install dependendies if needed:
+   * `npm i express`
+   * `npm i axios`
+   * `npm i ejs`
+5. Start server using command `node index.js`
+6. Access the website in your browser at `http://localhost:3000`
 
